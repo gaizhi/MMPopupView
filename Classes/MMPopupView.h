@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MMPopupItem.h"
 #import "MMPopupWindow.h"
 #import "MMPopupCategory.h"
 #import "MMPopupDefine.h"
