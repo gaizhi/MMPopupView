@@ -35,7 +35,7 @@
 
 @interface NSString (MMPopup)
 
-- (NSString *)mm_truncateByCharLength:(NSUInteger)charLength;
+- (NSString *) mm_truncateByCharLength:(NSUInteger)charLength;
 
 @end
 
@@ -56,5 +56,19 @@
 - (void) mm_distributeSpacingHorizontallyWith:(NSArray*)view;
 - (void) mm_distributeSpacingVerticallyWith:(NSArray*)view;
 
+@end
+
+@interface UIView (MMPopupLayout)
+
+@property (nonatomic) CGFloat mm_x;
+@property (nonatomic) CGFloat mm_y;
+@property (nonatomic) CGFloat mm_width;
+@property (nonatomic) CGFloat mm_height;
+@property (nonatomic) CGFloat mm_right;
+@property (nonatomic) CGFloat mm_bottom;
+@property (nonatomic) CGFloat mm_centerX;
+@property (nonatomic) CGFloat mm_centerY;
+@property (nonatomic) CGPoint mm_origin;
+@property (nonatomic) CGSize mm_size;
 
 @end
