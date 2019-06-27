@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AC56D0122C4BB3F0005C3E6 /* MMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC56CFB22C4BB3E0005C3E6 /* MMAlertView.m */; };
+		4AC56D0222C4BB3F0005C3E6 /* MMSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC56CFC22C4BB3E0005C3E6 /* MMSheetView.m */; };
+		4AC56D0322C4BB3F0005C3E6 /* MMPopupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC56D0022C4BB3E0005C3E6 /* MMPopupItem.m */; };
 		C3A6D7C7352C468FC6AFBD15 /* libPods-MMPopupView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EBFF7F54A0C418E7302440 /* libPods-MMPopupView.a */; };
 		ED1E99341B9BD5C20093760A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E99331B9BD5C20093760A /* main.m */; };
 		ED1E99371B9BD5C20093760A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E99361B9BD5C20093760A /* AppDelegate.m */; };
@@ -16,16 +19,19 @@
 		ED1E99421B9BD5C20093760A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1E99401B9BD5C20093760A /* LaunchScreen.storyboard */; };
 		ED1E994C1B9BD8520093760A /* MMPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E994B1B9BD8520093760A /* MMPopupView.m */; };
 		ED1E994F1B9BDAB80093760A /* MMPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E994E1B9BDAB80093760A /* MMPopupWindow.m */; };
-		ED1E99521B9BDAFA0093760A /* MMPopupitem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E99511B9BDAFA0093760A /* MMPopupitem.m */; };
 		ED1E99551B9BDE4B0093760A /* MMPopupCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E99541B9BDE4B0093760A /* MMPopupCategory.m */; };
-		ED1E99591B9BEE7D0093760A /* MMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E99581B9BEE7D0093760A /* MMAlertView.m */; };
-		ED1E995C1B9BEE8F0093760A /* MMSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E995B1B9BEE8F0093760A /* MMSheetView.m */; };
 		ED1E995F1B9C22F50093760A /* MMPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1E995E1B9C22F50093760A /* MMPinView.m */; };
 		EDB365121B9D3323003A0B05 /* MMDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB365111B9D3323003A0B05 /* MMDateView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		41200EBF1F3357F293167C6D /* Pods-MMPopupView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMPopupView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMPopupView/Pods-MMPopupView.debug.xcconfig"; sourceTree = "<group>"; };
+		4AC56CFB22C4BB3E0005C3E6 /* MMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAlertView.m; sourceTree = "<group>"; };
+		4AC56CFC22C4BB3E0005C3E6 /* MMSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSheetView.m; sourceTree = "<group>"; };
+		4AC56CFD22C4BB3E0005C3E6 /* MMPopupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupItem.h; sourceTree = "<group>"; };
+		4AC56CFE22C4BB3E0005C3E6 /* MMSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSheetView.h; sourceTree = "<group>"; };
+		4AC56CFF22C4BB3E0005C3E6 /* MMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAlertView.h; sourceTree = "<group>"; };
+		4AC56D0022C4BB3E0005C3E6 /* MMPopupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupItem.m; sourceTree = "<group>"; };
 		A4EBFF7F54A0C418E7302440 /* libPods-MMPopupView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MMPopupView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1E992F1B9BD5C20093760A /* MMPopupView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMPopupView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1E99331B9BD5C20093760A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,19 +47,13 @@
 		ED1E994B1B9BD8520093760A /* MMPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMPopupView.m; path = ../Classes/MMPopupView.m; sourceTree = "<group>"; };
 		ED1E994D1B9BDAB80093760A /* MMPopupWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMPopupWindow.h; path = ../Classes/MMPopupWindow.h; sourceTree = "<group>"; };
 		ED1E994E1B9BDAB80093760A /* MMPopupWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMPopupWindow.m; path = ../Classes/MMPopupWindow.m; sourceTree = "<group>"; };
-		ED1E99501B9BDAFA0093760A /* MMPopupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMPopupItem.h; path = ../Classes/MMPopupItem.h; sourceTree = "<group>"; };
-		ED1E99511B9BDAFA0093760A /* MMPopupitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMPopupitem.m; path = ../Classes/MMPopupitem.m; sourceTree = "<group>"; };
 		ED1E99531B9BDE4B0093760A /* MMPopupCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMPopupCategory.h; path = ../Classes/MMPopupCategory.h; sourceTree = "<group>"; };
 		ED1E99541B9BDE4B0093760A /* MMPopupCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMPopupCategory.m; path = ../Classes/MMPopupCategory.m; sourceTree = "<group>"; };
 		ED1E99561B9BE7BD0093760A /* MMPopupDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMPopupDefine.h; path = ../Classes/MMPopupDefine.h; sourceTree = "<group>"; };
-		ED1E99571B9BEE7D0093760A /* MMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMAlertView.h; path = ../Classes/MMAlertView.h; sourceTree = "<group>"; };
-		ED1E99581B9BEE7D0093760A /* MMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMAlertView.m; path = ../Classes/MMAlertView.m; sourceTree = "<group>"; };
-		ED1E995A1B9BEE8F0093760A /* MMSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMSheetView.h; path = ../Classes/MMSheetView.h; sourceTree = "<group>"; };
-		ED1E995B1B9BEE8F0093760A /* MMSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMSheetView.m; path = ../Classes/MMSheetView.m; sourceTree = "<group>"; };
-		ED1E995D1B9C22F50093760A /* MMPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMPinView.h; path = ../MMPinView.h; sourceTree = "<group>"; };
-		ED1E995E1B9C22F50093760A /* MMPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMPinView.m; path = ../MMPinView.m; sourceTree = "<group>"; };
-		EDB365101B9D3323003A0B05 /* MMDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDateView.h; sourceTree = SOURCE_ROOT; };
-		EDB365111B9D3323003A0B05 /* MMDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDateView.m; sourceTree = SOURCE_ROOT; };
+		ED1E995D1B9C22F50093760A /* MMPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPinView.h; sourceTree = "<group>"; };
+		ED1E995E1B9C22F50093760A /* MMPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPinView.m; sourceTree = "<group>"; };
+		EDB365101B9D3323003A0B05 /* MMDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDateView.h; path = ../Components/MMDateView.h; sourceTree = SOURCE_ROOT; };
+		EDB365111B9D3323003A0B05 /* MMDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDateView.m; path = ../Components/MMDateView.m; sourceTree = SOURCE_ROOT; };
 		FF8DF09A03ED96B87C4FB5EA /* Pods-MMPopupView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMPopupView.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMPopupView/Pods-MMPopupView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +78,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4AC56CFA22C4BB3E0005C3E6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4AC56CFF22C4BB3E0005C3E6 /* MMAlertView.h */,
+				4AC56CFB22C4BB3E0005C3E6 /* MMAlertView.m */,
+				EDB365101B9D3323003A0B05 /* MMDateView.h */,
+				EDB365111B9D3323003A0B05 /* MMDateView.m */,
+				ED1E995D1B9C22F50093760A /* MMPinView.h */,
+				ED1E995E1B9C22F50093760A /* MMPinView.m */,
+				4AC56CFD22C4BB3E0005C3E6 /* MMPopupItem.h */,
+				4AC56D0022C4BB3E0005C3E6 /* MMPopupItem.m */,
+				4AC56CFE22C4BB3E0005C3E6 /* MMSheetView.h */,
+				4AC56CFC22C4BB3E0005C3E6 /* MMSheetView.m */,
+			);
+			name = Components;
+			path = ../Components;
+			sourceTree = "<group>";
+		};
 		72E8955E140DFCE33AE55500 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +107,7 @@
 		ED1E99261B9BD5C20093760A = {
 			isa = PBXGroup;
 			children = (
+				4AC56CFA22C4BB3E0005C3E6 /* Components */,
 				ED1E99491B9BD8340093760A /* Classes */,
 				ED1E99311B9BD5C20093760A /* MMPopupView */,
 				ED1E99301B9BD5C20093760A /* Products */,
@@ -112,10 +131,6 @@
 				ED1E99361B9BD5C20093760A /* AppDelegate.m */,
 				ED1E99381B9BD5C20093760A /* ViewController.h */,
 				ED1E99391B9BD5C20093760A /* ViewController.m */,
-				ED1E995D1B9C22F50093760A /* MMPinView.h */,
-				ED1E995E1B9C22F50093760A /* MMPinView.m */,
-				EDB365101B9D3323003A0B05 /* MMDateView.h */,
-				EDB365111B9D3323003A0B05 /* MMDateView.m */,
 				ED1E993B1B9BD5C20093760A /* Main.storyboard */,
 				ED1E993E1B9BD5C20093760A /* Assets.xcassets */,
 				ED1E99401B9BD5C20093760A /* LaunchScreen.storyboard */,
@@ -140,15 +155,9 @@
 				ED1E994B1B9BD8520093760A /* MMPopupView.m */,
 				ED1E994D1B9BDAB80093760A /* MMPopupWindow.h */,
 				ED1E994E1B9BDAB80093760A /* MMPopupWindow.m */,
-				ED1E99501B9BDAFA0093760A /* MMPopupItem.h */,
-				ED1E99511B9BDAFA0093760A /* MMPopupitem.m */,
 				ED1E99531B9BDE4B0093760A /* MMPopupCategory.h */,
 				ED1E99541B9BDE4B0093760A /* MMPopupCategory.m */,
 				ED1E99561B9BE7BD0093760A /* MMPopupDefine.h */,
-				ED1E99571B9BEE7D0093760A /* MMAlertView.h */,
-				ED1E99581B9BEE7D0093760A /* MMAlertView.m */,
-				ED1E995A1B9BEE8F0093760A /* MMSheetView.h */,
-				ED1E995B1B9BEE8F0093760A /* MMSheetView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -181,7 +190,7 @@
 		ED1E99271B9BD5C20093760A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = LJC;
 				TargetAttributes = {
 					ED1E992E1B9BD5C20093760A = {
@@ -191,7 +200,7 @@
 			};
 			buildConfigurationList = ED1E992A1B9BD5C20093760A /* Build configuration list for PBXProject "MMPopupView" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -261,13 +270,13 @@
 				ED1E99551B9BDE4B0093760A /* MMPopupCategory.m in Sources */,
 				ED1E993A1B9BD5C20093760A /* ViewController.m in Sources */,
 				ED1E995F1B9C22F50093760A /* MMPinView.m in Sources */,
+				4AC56D0122C4BB3F0005C3E6 /* MMAlertView.m in Sources */,
+				4AC56D0222C4BB3F0005C3E6 /* MMSheetView.m in Sources */,
+				4AC56D0322C4BB3F0005C3E6 /* MMPopupItem.m in Sources */,
 				ED1E994C1B9BD8520093760A /* MMPopupView.m in Sources */,
-				ED1E99521B9BDAFA0093760A /* MMPopupitem.m in Sources */,
 				ED1E994F1B9BDAB80093760A /* MMPopupWindow.m in Sources */,
-				ED1E99591B9BEE7D0093760A /* MMAlertView.m in Sources */,
 				EDB365121B9D3323003A0B05 /* MMDateView.m in Sources */,
 				ED1E99371B9BD5C20093760A /* AppDelegate.m in Sources */,
-				ED1E995C1B9BEE8F0093760A /* MMSheetView.m in Sources */,
 				ED1E99341B9BD5C20093760A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,17 +307,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -342,17 +362,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
