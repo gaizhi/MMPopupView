@@ -14,6 +14,7 @@
 #import "MMPinView.h"
 #import "MMDateView.h"
 #import "MMPopupWindow.h"
+#import "MMWallView.h"
 
 @interface ViewController ()
 <
@@ -69,7 +70,7 @@ UITableViewDataSource
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = @[@"Alert - Default", @"Alert - Confirm", @"Alert - Input", @"Sheet - Default", @"Custom - PinView", @"Custom - DateView"][indexPath.row];
+    cell.textLabel.text = @[@"Alert - Default", @"Alert - Confirm", @"Alert - Input", @"Sheet - Default", @"Sheet - WallView", @"Custom - PinView", @"Custom - DateView"][indexPath.row];
     cell.textLabel.textColor = [UIColor redColor];
     
     return cell;
@@ -85,7 +86,7 @@ UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 7;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -159,13 +160,25 @@ UITableViewDataSource
         }
         case 4:
         {
+            MMWallView *wallView = [self wallView];
+            wallView.didClickFooter = ^(MMWallView * _Nonnull sheetView) {
+
+            };
+
+            wallView.attachedView = self.view;
+            wallView.attachedView.mm_dimBackgroundBlurEnabled = NO;
+            [wallView showWithBlock:completeBlock];
+            break;
+        }
+        case 5:
+        {
             MMPinView *pinView = [MMPinView new];
             
             [pinView showWithBlock:completeBlock];
             
             break;
         }
-        case 5:
+        case 6:
         {
             MMDateView *dateView = [MMDateView new];
             
@@ -181,6 +194,94 @@ UITableViewDataSource
         default:
             break;
     }
+}
+
+- (MMWallView *)wallView {
+    MMWallViewLayout *layout = [MMWallViewLayout new];
+    layout.itemSubviewsSpacing = 9;
+    if (@available(iOS 11.0, *)) {
+        layout.wallFooterHeight = 50 + self.view.safeAreaInsets.bottom;
+    } else {
+        // Fallback on earlier versions
+    }
+
+    MMWallViewAppearance *appearance = [MMWallViewAppearance new];
+    appearance.textLabelFont = [UIFont systemFontOfSize:10];
+
+    CGRect rect = CGRectMake(100, 100, [UIScreen mainScreen].bounds.size.width, 300);
+    MMWallView *wallView = [[MMWallView alloc] initWithFrame:rect];
+    wallView.wallHeaderLabel.text = @"此网页由 mp.weixin.qq.com 提供";
+    wallView.wallFooterLabel.text = @"取消";
+    wallView.wallLayout = layout;
+    wallView.wallAppearance = appearance;
+    wallView.models = [self wallModels];
+    return wallView;
+}
+
+#define titleKey @"title"
+#define imgNameKey @"imageName"
+
+- (NSArray *)wallModels {
+
+    NSArray *arr1 = @[@{titleKey   : @"发送给朋友",
+                        imgNameKey : @"sheet_Share"},
+
+                      @{titleKey   : @"分享到朋友圈",
+                        imgNameKey : @"sheet_Moments"},
+
+                      @{titleKey   : @"收藏",
+                        imgNameKey : @"sheet_Collection"},
+
+                      @{titleKey   : @"分享到\n手机QQ",
+                        imgNameKey : @"sheet_qq"},
+
+                      @{titleKey   : @"分享到\nQQ空间",
+                        imgNameKey : @"sheet_qzone"},
+
+                      @{titleKey   : @"在QQ浏览器\n中打开",
+                        imgNameKey : @"sheet_qqbrowser"}];
+
+    NSArray *arr2 = @[@{titleKey   : @"查看公众号",
+                        imgNameKey : @"sheet_Verified"},
+
+                      @{titleKey   : @"复制链接",
+                        imgNameKey : @"sheet_CopyLink"},
+
+                      @{titleKey   : @"复制文本",
+                        imgNameKey : @"sheet_CopyText"},
+
+                      @{titleKey   : @"刷新",
+                        imgNameKey : @"sheet_Refresh"},
+
+                      @{titleKey   : @"调整字体",
+                        imgNameKey : @"sheet_Font"},
+
+                      @{titleKey   : @"投诉",
+                        imgNameKey : @"sheet_Complaint"}];
+
+    NSMutableArray *array1 = [NSMutableArray array];
+    for (NSDictionary *dict in arr1) {
+        NSString *text = [dict objectForKey:titleKey];
+        NSString *imgName = [dict objectForKey:imgNameKey];
+        MMWallItemModel *item = [MMWallItemModel modelWithImage:[UIImage imageNamed:imgName] title:text];
+        item.handler = ^(NSInteger index) {
+            NSLog(@"wallView click at first section row %ld", index);
+        };
+        [array1 addObject:item];
+    }
+
+    NSMutableArray *array2 = [NSMutableArray array];
+    for (NSDictionary *dict in arr2) {
+        NSString *text = [dict objectForKey:titleKey];
+        NSString *imgName = [dict objectForKey:imgNameKey];
+        MMWallItemModel *item = [MMWallItemModel modelWithImage:[UIImage imageNamed:imgName] title:text];
+        item.handler = ^(NSInteger index) {
+            NSLog(@"wallView click at secend section row %ld", index);
+        };
+        [array2 addObject:item];
+    }
+
+    return [NSMutableArray arrayWithObjects:array1, array2, nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
