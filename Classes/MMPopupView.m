@@ -242,7 +242,8 @@ static NSString * const MMPopupViewHideAllNotification = @"MMPopupViewHideAllNot
             [self.attachedView.mm_dimBackgroundView addSubview:self];
             
             [self mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.centerX.equalTo(self.attachedView);
+                make.width.equalTo(self.attachedView.mm_dimBackgroundView);
+                make.centerX.equalTo(self.attachedView.mm_dimBackgroundView);
                 make.bottom.equalTo(self.attachedView.mas_bottom).offset(self.attachedView.frame.size.height);
             }];
             [self.superview layoutIfNeeded];
