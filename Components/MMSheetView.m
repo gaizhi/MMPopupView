@@ -123,9 +123,10 @@
         [self addSubview:self.cancelButton];
         [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self.buttonView);
-            make.height.mas_equalTo(config.buttonHeight);
+            make.height.mas_equalTo(config.cancelButtonHeight);
             make.top.equalTo(self.buttonView.mas_bottom).offset(8);
         }];
+        self.cancelButton.titleEdgeInsets = config.cancelButtonTitleInsets;
         self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:config.buttonFontSize];
         [self.cancelButton setBackgroundImage:[UIImage mm_imageWithColor:config.backgroundColor] forState:UIControlStateNormal];
         [self.cancelButton setBackgroundImage:[UIImage mm_imageWithColor:config.itemPressedColor] forState:UIControlStateHighlighted];
@@ -187,7 +188,10 @@
     
     if ( self )
     {
+        self.cancelButtonHeight = 50.0f;
         self.buttonHeight   = 50.0f;
+
+        self.cancelButtonTitleInsets = UIEdgeInsetsZero;
         self.innerMargin    = 19.0f;
         
         self.titleFontSize  = 14.0f;

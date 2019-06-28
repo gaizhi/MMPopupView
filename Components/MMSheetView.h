@@ -24,8 +24,11 @@
 
 + (MMSheetViewConfig*) globalConfig;
 
+@property (nonatomic, assign) CGFloat cancelButtonHeight;    // Default is 50.
 @property (nonatomic, assign) CGFloat buttonHeight;         // Default is 50.
-@property (nonatomic, assign) CGFloat innerMargin;          // Default is 19.
+
+@property (nonatomic, assign) UIEdgeInsets cancelButtonTitleInsets;     // Default is UIEdgeInsetsZero.
+@property (nonatomic, assign) CGFloat innerMargin;                      // Default is 19.
 
 @property (nonatomic, assign) CGFloat titleFontSize;        // Default is 14.
 @property (nonatomic, assign) CGFloat buttonFontSize;       // Default is 17.

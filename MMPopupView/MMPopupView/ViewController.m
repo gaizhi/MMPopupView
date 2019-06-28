@@ -146,13 +146,26 @@ UITableViewDataSource
         }
         case 3:
         {
+            if (@available(iOS 11.0, *)) {
+                MMSheetViewConfig.globalConfig.cancelButtonHeight = MMSheetViewConfig.globalConfig.buttonHeight + self.view.safeAreaInsets.bottom;
+                MMSheetViewConfig.globalConfig.cancelButtonTitleInsets = UIEdgeInsetsMake(0, 0, MAX(0, self.view.safeAreaInsets.bottom), 0);
+            } else {
+                // Fallback on earlier versions
+            }
+
+            MMSheetViewConfig.globalConfig.innerMargin = 8;
+            MMSheetViewConfig.globalConfig.splitColor = UIColor.groupTableViewBackgroundColor;
+            
             NSArray *items =
             @[MMItemMake(@"Normal", MMItemTypeNormal, block),
               MMItemMake(@"Highlight", MMItemTypeHighlight, block),
               MMItemMake(@"Disabled", MMItemTypeDisabled, block)];
+
+            NSString *title = @"这是一个模仿微信底部ActionSheet风格的ActionSheet, 如果你对MMSheetView有更好的建议或者发现Bug的话可以在Github上issue, Thx.";
             
-            MMSheetView *sheetView = [[MMSheetView alloc] initWithTitle:@"SheetView"
+            MMSheetView *sheetView = [[MMSheetView alloc] initWithTitle:title
                                                                   items:items];
+            
             sheetView.attachedView = self.view;
             sheetView.attachedView.mm_dimBackgroundBlurEnabled = NO;
             [sheetView showWithBlock:completeBlock];
