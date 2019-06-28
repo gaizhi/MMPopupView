@@ -59,6 +59,14 @@
     return 50;
 }
 
+- (UIEdgeInsets)wallFooterTitleInsets {
+    if (UIEdgeInsetsEqualToEdgeInsets(_wallFooterTitleInsets, UIEdgeInsetsZero)) {
+        return UIEdgeInsetsZero;
+    }
+
+    return _wallFooterTitleInsets;
+}
+
 @end
 
 @implementation MMWallViewAppearance

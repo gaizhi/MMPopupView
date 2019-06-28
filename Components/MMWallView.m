@@ -239,20 +239,17 @@ typedef void(^MMPopupIndexPathHandler)(NSIndexPath *indexPath);
         _wallHeaderLabel = [self labelWithTextColor:[UIColor darkGrayColor] font:[UIFont systemFontOfSize:12] action:@selector(headerClicked)];
         _tableView.tableHeaderView = _wallHeaderLabel;
 
-        _wallFooterLabel = [self labelWithTextColor:[UIColor blackColor] font:[UIFont systemFontOfSize:17] action:@selector(footerClicked)];
-        _wallFooterLabel.backgroundColor = [UIColor whiteColor];
+        _wallFooterButton = [UIButton mm_buttonWithTarget:self action:@selector(footerClicked)];
+        _wallFooterButton.titleLabel.font = [UIFont systemFontOfSize:17];
+        [_wallFooterButton setBackgroundImage:[UIImage mm_imageWithColor:UIColor.whiteColor] forState:UIControlStateNormal];
+        [_wallFooterButton setBackgroundImage:[UIImage mm_imageWithColor:UIColor.whiteColor] forState:UIControlStateHighlighted];
+        [_wallFooterButton setTitle:@"取消" forState:UIControlStateNormal];
+        [_wallFooterButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
 
-        UIView *footerView = [[UIView alloc] init];
-        footerView.backgroundColor = [UIColor whiteColor];
-        [footerView addSubview:_wallFooterLabel];
-
-        _tableView.tableFooterView = footerView;
+        _tableView.tableFooterView = _wallFooterButton;
 
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self);
-            make.left.equalTo(self);
-            make.bottom.equalTo(self);
-            make.right.equalTo(self);
+            make.top.left.bottom.right.equalTo(self);
         }];
 
         [self autoAdjustFitHeight];
@@ -382,7 +379,7 @@ typedef void(^MMPopupIndexPathHandler)(NSIndexPath *indexPath);
 
 - (void)reloadTableViewHeaderAndFooterHeight
 {
-    _wallFooterLabel.mm_size = CGSizeMake(self.mm_width, MIN(50, self.wallLayout.wallFooterHeight));
+    _wallFooterButton.titleEdgeInsets  = self.wallLayout.wallFooterTitleInsets;
     _tableView.tableHeaderView.mm_size = CGSizeMake(self.mm_width, self.wallLayout.wallHeaderHeight);
     _tableView.tableFooterView.mm_size = CGSizeMake(self.mm_width, self.wallLayout.wallFooterHeight);
 }
@@ -400,7 +397,7 @@ typedef void(^MMPopupIndexPathHandler)(NSIndexPath *indexPath);
     if (!CGRectEqualToRect(CGRectZero, _wallHeaderLabel.frame)) {
         totalHeight += self.wallLayout.wallHeaderHeight;
     }
-    if (!CGRectEqualToRect(CGRectZero, _wallFooterLabel.frame)) {
+    if (!CGRectEqualToRect(CGRectZero, _wallFooterButton.frame)) {
         totalHeight += self.wallLayout.wallFooterHeight;
     }
 

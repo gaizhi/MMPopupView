@@ -214,6 +214,7 @@ UITableViewDataSource
     layout.itemSubviewsSpacing = 9;
     if (@available(iOS 11.0, *)) {
         layout.wallFooterHeight = 50 + self.view.safeAreaInsets.bottom;
+        layout.wallFooterTitleInsets = UIEdgeInsetsMake(0, 0, self.view.safeAreaInsets.bottom, 0);
     } else {
         // Fallback on earlier versions
     }
@@ -224,7 +225,7 @@ UITableViewDataSource
     CGRect rect = CGRectMake(100, 100, [UIScreen mainScreen].bounds.size.width, 300);
     MMWallView *wallView = [[MMWallView alloc] initWithFrame:rect];
     wallView.wallHeaderLabel.text = @"此网页由 mp.weixin.qq.com 提供";
-    wallView.wallFooterLabel.text = @"取消";
+    [wallView.wallFooterButton setTitle:@"取消" forState:(UIControlStateNormal)];
     wallView.wallLayout = layout;
     wallView.wallAppearance = appearance;
     wallView.models = [self wallModels];

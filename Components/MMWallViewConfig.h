@@ -33,6 +33,9 @@
 /// 设置底部视图高 (wallFooterLabel.height = wallFooterHeight). default is 50
 @property (nonatomic, assign) CGFloat wallFooterHeight;
 
+/// 设置底部视图文字内间距. default is UIEdgeInsetsZero.
+@property (nonatomic, assign) UIEdgeInsets wallFooterTitleInsets;
+
 @end
 
 @interface MMWallViewAppearance : NSObject

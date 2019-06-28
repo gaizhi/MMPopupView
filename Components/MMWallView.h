@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MMWallView : MMPopupView
 
-@property (nonatomic, strong, readonly) UILabel *wallFooterLabel;
+@property (nonatomic, strong, readonly) UIButton *wallFooterButton;
 @property (nonatomic, strong, readonly) UILabel *wallHeaderLabel;
 
 @property (nonatomic, strong) NSArray<NSArray<MMWallItemModel *> *> *models;
