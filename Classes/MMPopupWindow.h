@@ -10,7 +10,6 @@
 
 @interface MMPopupWindow : UIWindow
 
-@property (nonatomic, assign) BOOL touchWildToHide; // default is NO. When YES, popup views will be hidden when user touch the translucent background.
 @property (nonatomic, readonly) UIView* attachView;
 
 + (MMPopupWindow *)sharedWindow;

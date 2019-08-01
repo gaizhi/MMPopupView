@@ -12,9 +12,6 @@
 #import "MMPopupView.h"
 
 @interface MMPopupWindow()
-<
-UIGestureRecognizerDelegate
->
 
 @end
 
@@ -26,12 +23,7 @@ UIGestureRecognizerDelegate
     
     if ( self )
     {
-        self.windowLevel = UIWindowLevelStatusBar + 1;
-        
-        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)];
-        gesture.cancelsTouchesInView = NO;
-        gesture.delegate = self;
-        [self addGestureRecognizer:gesture];
+        self.windowLevel = UIWindowLevelAlert - 1;
     }
     return self;
 }
@@ -56,26 +48,6 @@ UIGestureRecognizerDelegate
     
     [self attachView].mm_dimBackgroundView.hidden = YES;
     self.hidden = YES;
-}
-
-- (void)actionTap:(UITapGestureRecognizer*)gesture
-{
-    if ( self.touchWildToHide && !self.mm_dimBackgroundAnimating )
-    {
-        for ( UIView *v in [self attachView].mm_dimBackgroundView.subviews )
-        {
-            if ( [v isKindOfClass:[MMPopupView class]] )
-            {
-                MMPopupView *popupView = (MMPopupView*)v;
-                [popupView hide];
-            }
-        }
-    }
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
-    return ( touch.view == self.attachView.mm_dimBackgroundView );
 }
 
 - (UIView *)attachView

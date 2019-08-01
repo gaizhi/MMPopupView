@@ -51,9 +51,6 @@ UITableViewDataSource
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
-//    [[MMPopupWindow sharedWindow] cacheWindow];
-    [MMPopupWindow sharedWindow].touchWildToHide = YES;
-    
     MMAlertViewConfig *alertConfig = [MMAlertViewConfig globalConfig];
     MMSheetViewConfig *sheetConfig = [MMSheetViewConfig globalConfig];
     
@@ -165,6 +162,8 @@ UITableViewDataSource
             
             MMSheetView *sheetView = [[MMSheetView alloc] initWithTitle:title
                                                                   items:items];
+
+            sheetView.touchWildToHide = YES;
             
             sheetView.attachedView = self.view;
             sheetView.attachedView.mm_dimBackgroundBlurEnabled = NO;
@@ -173,20 +172,29 @@ UITableViewDataSource
         }
         case 4:
         {
+            long long date1 = NSDate.date.timeIntervalSince1970 * 1000;
             MMWallView *wallView = [self wallView];
+            wallView.touchWildToHide = YES;
+
             wallView.didClickFooter = ^(MMWallView * _Nonnull sheetView) {
 
             };
 
             wallView.attachedView = self.view;
-            wallView.attachedView.mm_dimBackgroundBlurEnabled = NO;
+            wallView.animationDuration = .35;
+
             [wallView showWithBlock:completeBlock];
+
+            long long date2 = NSDate.date.timeIntervalSince1970 * 1000;
+
+            NSLog(@"toalt end %lld", date2 - date1);
             break;
         }
         case 5:
         {
             MMPinView *pinView = [MMPinView new];
-            
+            pinView.attachedView.mm_dimBackgroundBlurEnabled = NO;
+
             [pinView showWithBlock:completeBlock];
             
             break;
@@ -273,6 +281,7 @@ UITableViewDataSource
                       @{titleKey   : @"投诉",
                         imgNameKey : @"sheet_Complaint"}];
 
+    long long date1 = NSDate.date.timeIntervalSince1970 * 1000;
     NSMutableArray *array1 = [NSMutableArray array];
     for (NSDictionary *dict in arr1) {
         NSString *text = [dict objectForKey:titleKey];
@@ -294,6 +303,10 @@ UITableViewDataSource
         };
         [array2 addObject:item];
     }
+
+    long long date2 = NSDate.date.timeIntervalSince1970 * 1000;
+
+    NSLog(@"end %lld", date2 - date1);
 
     return [NSMutableArray arrayWithObjects:array1, array2, nil];
 }

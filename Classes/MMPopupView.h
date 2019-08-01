@@ -28,6 +28,8 @@ typedef void(^MMPopupCompletionBlock)(MMPopupView *, BOOL);
 
 @property (nonatomic, strong          ) UIView         *attachedView;       // default is MMPopupWindow. You can attach MMPopupView to any UIView.
 
+@property (nonatomic, assign          ) BOOL           touchWildToHide;     // default is NO. When YES, popup views will be hidden when user touch the translucent background.
+
 @property (nonatomic, assign          ) MMPopupType    type;                // default is MMPopupTypeAlert.
 @property (nonatomic, assign          ) NSTimeInterval animationDuration;   // default is 0.3 sec.
 @property (nonatomic, assign          ) BOOL           withKeyboard;        // default is NO. When YES, alert view with be shown with a center offset (only effect with MMPopupTypeAlert).

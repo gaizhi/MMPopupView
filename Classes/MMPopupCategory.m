@@ -9,6 +9,7 @@
 #import "MMPopupCategory.h"
 #import "MMPopupDefine.h"
 #import "MMPopupWindow.h"
+#import "MMPopupView.h"
 #import <Masonry/Masonry.h>
 #import <objc/runtime.h>
 
@@ -149,8 +150,11 @@ static const void *mm_dimBackgroundBlurEffectStyleKey = &mm_dimBackgroundBlurEff
         dimView.alpha = 0.0f;
         dimView.backgroundColor = MMHexColor(0x0000007F);
         dimView.layer.zPosition = FLT_MAX;
-        
+
         self.mm_dimAnimationDuration = 0.3f;
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mm_dimBackgroundActionTap:)];
+        gesture.cancelsTouchesInView = NO;
+        [dimView addGestureRecognizer:gesture];
         
         objc_setAssociatedObject(self, mm_dimBackgroundViewKey, dimView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
@@ -433,6 +437,36 @@ static const void *mm_dimBackgroundBlurEffectStyleKey = &mm_dimBackgroundBlurEff
         make.bottom.equalTo(self.mas_bottom);
     }];
     
+}
+
+- (void)mm_dimBackgroundActionTap:(UITapGestureRecognizer*)gesture
+{
+    if ( self.mm_dimBackgroundAnimating )
+    {
+        return;
+    }
+
+    BOOL hasPopView = NO;
+
+    for ( UIView *v in self.mm_dimBackgroundView.subviews )
+    {
+        if ( ![v isKindOfClass:[MMPopupView class]])
+        {
+            continue;
+        }
+
+        MMPopupView *popupView = (MMPopupView*)v;
+        if (popupView.touchWildToHide) {
+            [popupView hide];
+            return;
+        }
+
+        hasPopView = YES;
+    }
+
+    if (!hasPopView) {
+        [self mm_hideDimBackground];
+    }
 }
 
 @end

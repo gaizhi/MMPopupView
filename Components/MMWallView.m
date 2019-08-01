@@ -217,7 +217,7 @@ typedef void(^MMPopupIndexPathHandler)(NSIndexPath *indexPath);
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor colorWithRed:240 / 255. green:240 / 255. blue:240 / 255. alpha:0xff / 255.];
+        self.backgroundColor = UIColor.whiteColor;
 
         self.type = MMPopupTypeSheet;
 
