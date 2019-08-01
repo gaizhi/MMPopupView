@@ -102,6 +102,13 @@ static NSString * const MMPopupViewHideAllNotification = @"MMPopupViewHideAllNot
     self.attachedView.mm_dimAnimationDuration = animationDuration;
 }
 
+- (void)setAttachedView:(UIView *)attachedView
+{
+    attachedView.mm_dimAnimationDuration = self.animationDuration;
+
+    _attachedView = attachedView;
+}
+
 - (void)show
 {
     [self showWithBlock:nil];

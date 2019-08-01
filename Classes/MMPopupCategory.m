@@ -151,7 +151,6 @@ static const void *mm_dimBackgroundBlurEffectStyleKey = &mm_dimBackgroundBlurEff
         dimView.backgroundColor = MMHexColor(0x0000007F);
         dimView.layer.zPosition = FLT_MAX;
 
-        self.mm_dimAnimationDuration = 0.3f;
         UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mm_dimBackgroundActionTap:)];
         gesture.cancelsTouchesInView = NO;
         [dimView addGestureRecognizer:gesture];
