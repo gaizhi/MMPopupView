@@ -299,7 +299,6 @@
 				TargetAttributes = {
 					ED1E992E1B9BD5C20093760A = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = X9UF9QF7W5;
 					};
 				};
 			};
@@ -547,11 +546,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X9UF9QF7W5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MMPopupView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adad184.MMPopupView.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adad184.MMPopupView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -564,11 +563,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X9UF9QF7W5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MMPopupView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adad184.MMPopupView.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adad184.MMPopupView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
