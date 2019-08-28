@@ -445,17 +445,24 @@ static const void *mm_dimBackgroundBlurEffectStyleKey = &mm_dimBackgroundBlurEff
         return;
     }
 
+    CGPoint point = [gesture locationInView:self.mm_dimBackgroundView];
+    if ( [self.mm_dimBackgroundView hitTest:point withEvent:nil] != self.mm_dimBackgroundView )
+    {
+        return;
+    }
+
     BOOL hasPopView = NO;
 
     for ( UIView *v in self.mm_dimBackgroundView.subviews )
     {
-        if ( ![v isKindOfClass:[MMPopupView class]])
+        if ( ![v isKindOfClass:[MMPopupView class]] )
         {
             continue;
         }
 
         MMPopupView *popupView = (MMPopupView*)v;
-        if (popupView.touchWildToHide) {
+        if ( popupView.touchWildToHide )
+        {
             [popupView hide];
             return;
         }
